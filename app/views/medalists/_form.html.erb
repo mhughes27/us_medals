@@ -1,0 +1,41 @@
+<%= form_for @medalist do |f| %>
+ 
+  <% if @medalist.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@medalist.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @medalist.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :athlete %><br>
+    <%= f.text_field :athlete %>
+  </p>
+
+  <p>
+    <%= f.label :sport %><br>
+    <%= f.text_field :sport %>
+  </p>
+
+  <p>
+    <%= f.label :event %><br>
+    <%= f.text_field :event %>
+  </p>
+ 
+  <p>
+    <%= f.label :place %><br>
+    <%= f.text_area :place %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>

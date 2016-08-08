@@ -1,0 +1,26 @@
+<h1> 2016 Medalists</h1>
+
+<%= link_to 'New Medalist', new_medalist_path %>
+
+<table>
+	<tr>
+		<th>Athlete</th>
+		<th>Sport</th>
+		<th>Event</th>
+		<th>Medal</th>
+	</tr>
+
+	<% @medalist.each do |medalist| %>
+		<tr>
+			<td><%= medalist.athlete %></td>
+			<td><%= medalist.sport %></td>
+			<td><%= medalist.event %></td>
+			<td><%= medalist.place %></td>
+			<td><%= link_to 'Show', medalist_path(medalist) %></td>
+			<td><%= link_to 'Edit', edit_medalist_path(medalist) %></td>
+			<td><%= link_to 'Destroy', medalist_path(medalist),
+					method: :delete,
+					data: {confirm: 'Are you sure?'} %></td>
+		</tr>
+	<% end %>
+</table>

@@ -1,0 +1,23 @@
+<p>
+	<strong>Athlete:</strong>
+	<%= @medalist.athlete %>
+</p>
+
+<p>
+	<strong>Sport:</strong>
+	<%= @medalist.sport %>
+</p>
+
+<p>
+	<strong>Event:</strong>
+	<%= @medalist.event %>
+</p>
+
+<p>
+	<strong>Medal:</strong>
+	<%= @medalist.place %>
+</p>
+
+
+<%= link_to 'Edit', edit_medalist_path(@medalist) %>
+<%= link_to 'Back', medalists_path %>
